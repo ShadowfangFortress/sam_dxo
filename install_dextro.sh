@@ -34,13 +34,13 @@ function download_node() {
   #cd $TMP_FOLDER >/dev/null 2>&1
   #rm $COIN_ZIP >/dev/null 2>&1
   cd /root/ >/dev/null 2>&1
-  wget https://github.com/dextrocoin/dextro/releases/download/2.0.0.0/dextro_v2.0_ubuntu_16.04.tar.gz
+  wget https://github.com/dextrocoin/dextro/releases/download/2.0.2.1/dextro-v2.0.2.1-ubuntu_16.tar.gz
   compile_error
-  tar -xvzf dextro_v2.0_ubuntu_16.04.tar.gz >/dev/null 2>&1
+  tar -xvzf dextro-v2.0.2.1-ubuntu_16.tar.gz >/dev/null 2>&1
   wget https://github.com/cryptosam212/sam_dxo/raw/master/dextrocore.zip
   unzip dextrocore.zip >/dev/null 2>&1
   compile_error
-  rm -r dextro_v2.0_ubuntu_16.04.tar.gz* >/dev/null 2>&1
+  rm -r dextro-v2.0.2.1-ubuntu_16.tar.gz* >/dev/null 2>&1
   rm -r  dextrocore.zip* >/dev/null 2>&1
   chmod +x dextrod && chmod +x dextro-cli
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
@@ -136,7 +136,7 @@ clear
 function update_config() {
 cat << EOF >> $CONFIGFOLDER/$CONFIG_FILE
 logintimestamps=1
-maxconnections=256
+maxconnections=20
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
